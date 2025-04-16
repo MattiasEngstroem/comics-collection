@@ -22,4 +22,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-/src/APIKey/APIKey.ts
+src/APIKey/APIKey.ts
