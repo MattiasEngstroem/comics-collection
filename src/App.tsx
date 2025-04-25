@@ -1,27 +1,24 @@
 import "./App.scss";
 import useFetch from "./hooks/useFetch";
+import { issueObject, replyObject } from "./types/types";
 
 function App() {
-  const allIssues: any = []; //TODO:typa upp
+  const allIssues: issueObject[] = [];
 
   for (let os = 0; os < 700; os += 100) {
-    const reply: any | null = useFetch(
-      //TODO:typa upp
+    const reply: replyObject | null = useFetch(
       `/issues&filter=volume:2127&limit=100&offset=${os}&field_list=cover_date,id,image,issue_number,name`
     );
 
-    if (reply) {
+    if (reply && reply.results) {
       for (let i = 0; i < reply.results.length; i++) {
         allIssues.push(reply.results[i]);
       }
     }
   }
 
-  const sortedIssues = allIssues.sort(
-    (
-      a: any,
-      b: any //TODO:typa upp
-    ) => a.cover_date.localeCompare(b.cover_date)
+  const sortedIssues = allIssues.sort((a: issueObject, b: issueObject) =>
+    a.cover_date.localeCompare(b.cover_date)
   );
 
   console.log(sortedIssues);
