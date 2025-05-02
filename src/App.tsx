@@ -1,31 +1,29 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
-import useFetch from "./hooks/useFetch";
-import { issueObject, replyObject } from "./types/types";
+import { IssuesProvider } from "./context/IssuesContext";
+import React from "react";
+import HomePage from "./components/HomePage/HomePage";
+import Search from "./components/Search/Search";
+import Collection from "./components/Collection/Collection";
+import Wantlist from "./components/Wantlist/Wantlist";
+import IssueDetails from "./components/IssueDetails/IssueDetails";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-  const allIssues: issueObject[] = [];
-
-  for (let os = 0; os < 700; os += 100) {
-    const reply: replyObject | null = useFetch(
-      `/issues&filter=volume:2127&limit=100&offset=${os}&field_list=cover_date,id,image,issue_number,name`
-    );
-
-    if (reply && reply.results) {
-      for (let i = 0; i < reply.results.length; i++) {
-        allIssues.push(reply.results[i]);
-      }
-    }
-  }
-
-  const sortedIssues = allIssues.sort((a: issueObject, b: issueObject) =>
-    a.cover_date.localeCompare(b.cover_date)
-  );
-
-  console.log(sortedIssues);
-
   return (
     <>
-      <h1>Comics Collection</h1>
+      <IssuesProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/collection" element={<Collection />} />
+            <Route path="/wantlist" element={<Wantlist />} />
+            <Route path="/issue_details/:id" element={<IssueDetails />} />
+          </Routes>
+        </BrowserRouter>
+      </IssuesProvider>
     </>
   );
 }
