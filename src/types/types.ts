@@ -28,3 +28,11 @@ export type replyObject = {
   status_code: number;
   results: issueObject[];
 };
+
+export type collectionItem = {
+  id: number;
+  grade: string;
+  comment: string;
+  condition: string;
+  pages: number;
+};

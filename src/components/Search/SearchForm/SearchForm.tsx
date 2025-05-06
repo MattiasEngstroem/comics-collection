@@ -14,7 +14,7 @@ export default function SearchForm({
   handleClick,
 }: SearchFormProps) {
   const years: number[] = [];
-  for (let i: number = 1963; i < 2013; i++) {
+  for (let i: number = 1963; i < 2015; i++) {
     years.push(i);
   }
   return (

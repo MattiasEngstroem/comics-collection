@@ -10,7 +10,7 @@ export default function IssuesList() {
         {issues.map((issue) => (
           <li key={issue.id}>
             Issue number: {issue.issue_number} Name: {issue.name} Date:{" "}
-            {issue.cover_date}
+            {issue.cover_date} id: {issue.id}
           </li>
         ))}
       </ul>

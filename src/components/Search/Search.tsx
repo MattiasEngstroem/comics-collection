@@ -1,9 +1,9 @@
 import { useState } from "react";
 import SearchForm from "./SearchForm/SearchForm";
-import SearchResults from "./SearchResults/SearchResults";
 import { issueObject } from "../../types/types";
 import { useIssues } from "../../hooks/useIssues";
 import "./Search.scss";
+import CardContainer from "../CardContainer/CardContainer";
 
 export default function Search() {
   const [year, setYear] = useState("all");
@@ -52,7 +52,7 @@ export default function Search() {
         handleChange={handleChange}
         handleClick={handleClick}
       />
-      {hasSearched && <SearchResults />}
+      {hasSearched && <CardContainer arrayToRender={results} />}
     </div>
   );
 }
