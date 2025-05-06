@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 type CollectionContextType = {
   items: collectionItem[];
+  setItems: React.Dispatch<React.SetStateAction<collectionItem[]>>;
 };
 
 export const CollectionContext = createContext<
@@ -19,14 +20,14 @@ export const CollectionProvider = ({ children }: { children: ReactNode }) => {
       { id: 6422, grade: "5", comment: "as", condition: "ryry", pages: 32 },
       { id: 6503, grade: "5", comment: "as", condition: "ryry", pages: 32 },
       { id: 6595, grade: "5", comment: "as", condition: "ryry", pages: 32 },
-      { id: 6685, grade: "5", comment: "as", condition: "ryry", pages: 32 },
+      { id: 6685, grade: "5", comment: "as", condition: "ryry", pages: 31 },
     ];
     setItems(test);
   }, []);
   //
 
   return (
-    <CollectionContext.Provider value={{ items }}>
+    <CollectionContext.Provider value={{ items, setItems }}>
       {children}
     </CollectionContext.Provider>
   );

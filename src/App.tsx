@@ -9,22 +9,25 @@ import Wantlist from "./components/Wantlist/Wantlist";
 import IssueDetails from "./components/IssueDetails/IssueDetails";
 import Navbar from "./components/Navbar/Navbar";
 import { CollectionProvider } from "./context/CollectionContext";
+import { WantlistProvider } from "./context/WantlistContext";
 
 function App() {
   return (
     <>
       <IssuesProvider>
         <CollectionProvider>
-          <BrowserRouter>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/collection" element={<Collection />} />
-              <Route path="/wantlist" element={<Wantlist />} />
-              <Route path="/issue_details/:id" element={<IssueDetails />} />
-            </Routes>
-          </BrowserRouter>
+          <WantlistProvider>
+            <BrowserRouter>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/search" element={<Search />} />
+                <Route path="/collection" element={<Collection />} />
+                <Route path="/wantlist" element={<Wantlist />} />
+                <Route path="/issue_details/:id" element={<IssueDetails />} />
+              </Routes>
+            </BrowserRouter>
+          </WantlistProvider>
         </CollectionProvider>
       </IssuesProvider>
     </>
