@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useCollection } from "../../hooks/useCollection";
 import { useWantlist } from "../../hooks/useWantlist";
 import { issueObject } from "../../types/types";
@@ -12,6 +13,11 @@ export default function Card({ issue }: CardProps) {
   const { wishes } = useWantlist();
   const isInCollection = items.some((item) => item.id === issue.id);
   const isInWantlist = wishes.some((wish) => wish === issue.id);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/issue_details/${issue.id}`);
+  };
 
   return (
     <div className="card">
@@ -19,6 +25,7 @@ export default function Card({ issue }: CardProps) {
         className="cover-image"
         src={issue.image.original_url}
         alt="tidningens omslag"
+        onClick={handleClick}
       />
       <p>
         #{issue.issue_number}: {issue.name}

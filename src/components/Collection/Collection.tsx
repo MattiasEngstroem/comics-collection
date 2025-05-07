@@ -20,11 +20,15 @@ export default function Collection() {
     });
   });
 
+  const sortedIssues = collectionIssues.sort((a: issueObject, b: issueObject) =>
+    a.cover_date.localeCompare(b.cover_date)
+  );
+
   return (
     <div>
       <h1>Number of issues in collection: {items.length}</h1>
       <h2>Total number of pages in issues: {totalPages}</h2>
-      <CardContainer arrayToRender={collectionIssues} />
+      <CardContainer arrayToRender={sortedIssues} />
     </div>
   );
 }

@@ -17,9 +17,13 @@ export default function Wantlist() {
     });
   });
 
+  const sortedIssues = wantlistIssues.sort((a: issueObject, b: issueObject) =>
+    a.cover_date.localeCompare(b.cover_date)
+  );
+
   return (
     <div>
-      <CardContainer arrayToRender={wantlistIssues} />
+      <CardContainer arrayToRender={sortedIssues} />
     </div>
   );
 }

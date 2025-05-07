@@ -1,0 +1,10 @@
+.issue-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.details-image {
+  height: 90vh;
+  width: auto;
+}

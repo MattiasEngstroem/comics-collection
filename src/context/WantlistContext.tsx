@@ -15,7 +15,7 @@ export const WantlistProvider = ({ children }: { children: ReactNode }) => {
 
   //TODO: ta bort detta sedan, bara test
   useEffect(() => {
-    const test: number[] = [6937, 6985, 7024, 7066];
+    const test: number[] = [6985, 7024, 7066, 6937];
     setWishes(test);
   }, []);
   //

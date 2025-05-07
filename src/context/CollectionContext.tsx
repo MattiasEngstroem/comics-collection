@@ -17,10 +17,34 @@ export const CollectionProvider = ({ children }: { children: ReactNode }) => {
   //TODO: ta bort detta sedan, bara test
   useEffect(() => {
     const test: collectionItem[] = [
-      { id: 6422, grade: "5", comment: "as", condition: "ryry", pages: 32 },
-      { id: 6503, grade: "5", comment: "as", condition: "ryry", pages: 32 },
-      { id: 6595, grade: "5", comment: "as", condition: "ryry", pages: 32 },
-      { id: 6685, grade: "5", comment: "as", condition: "ryry", pages: 31 },
+      {
+        id: 6503,
+        grade: "😠",
+        comment: "ashjfdhsdgfjs",
+        condition: "NM",
+        pages: 32,
+      },
+      {
+        id: 6422,
+        grade: "😠",
+        comment: "asuehfjdfhf",
+        condition: "NM",
+        pages: 32,
+      },
+      {
+        id: 6595,
+        grade: "😠",
+        comment: "asbvbvxn",
+        condition: "NM",
+        pages: 32,
+      },
+      {
+        id: 6685,
+        grade: "😠",
+        comment: "asedbdjsdd",
+        condition: "NM",
+        pages: 31,
+      },
     ];
     setItems(test);
   }, []);
