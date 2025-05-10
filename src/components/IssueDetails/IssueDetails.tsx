@@ -46,9 +46,9 @@ export default function IssueDetails() {
         {thisItem && (
           <>
             <p>grade: {thisItem.grade}</p>
-            <p>comment: {thisItem.comment}</p>
             <p>condition: {thisItem.condition}</p>
             <p>number of pages: {thisItem.pages}</p>
+            <p className="comment">{thisItem.comment}</p>
             <button onClick={removeCollection}>REMOVE FROM COLLECTION</button>
           </>
         )}

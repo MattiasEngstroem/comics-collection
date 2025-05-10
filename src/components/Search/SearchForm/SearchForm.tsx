@@ -1,3 +1,5 @@
+import "./SearchForm.scss";
+
 type SearchFormProps = {
   year: string;
   name: string;

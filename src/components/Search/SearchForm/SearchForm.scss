@@ -1,0 +1,18 @@
+.search-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  button {
+    width: fit-content; // bara så bred som innehållet kräver
+    margin: 0 auto; // centrerar horisontellt i block
+    display: block; // krävs för auto-marginaler att funka
+    transition: transform 0.2s ease;
+    transform-origin: center;
+    will-change: transform;
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+}

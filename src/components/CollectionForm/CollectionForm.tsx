@@ -46,7 +46,7 @@ export default function CollectionForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="collection-form" onSubmit={handleSubmit}>
       <label>
         grade:
         <select
@@ -59,15 +59,6 @@ export default function CollectionForm() {
           <option>😊</option>
           <option>😁</option>
         </select>
-      </label>
-      <label>
-        comment:
-        <input
-          type="text"
-          name="comment"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
       </label>
       <label>
         condition:
@@ -92,6 +83,14 @@ export default function CollectionForm() {
           name="pages"
           value={pages}
           onChange={(e) => setPages(e.target.value)}
+        />
+      </label>
+      <label>
+        comment:
+        <textarea
+          name="comment"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
         />
       </label>
       <button type="submit">{thisItem ? "EDIT" : "ADD TO COLLECTION"}</button>

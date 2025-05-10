@@ -13,7 +13,7 @@ import { WantlistProvider } from "./context/WantlistContext";
 
 function App() {
   return (
-    <>
+    <div className="app">
       <IssuesProvider>
         <CollectionProvider>
           <WantlistProvider>
@@ -30,7 +30,7 @@ function App() {
           </WantlistProvider>
         </CollectionProvider>
       </IssuesProvider>
-    </>
+    </div>
   );
 }
 

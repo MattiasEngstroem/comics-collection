@@ -1,0 +1,8 @@
+@use "/src/styles/variables.scss" as *;
+@use "/src/styles/fonts.scss" as *;
+
+.collection {
+  background-color: $yellow;
+
+  @include open-sans-uniquifier;
+}

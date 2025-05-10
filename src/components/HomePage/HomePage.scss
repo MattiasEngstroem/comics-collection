@@ -1,0 +1,20 @@
+@use "/src/styles/fonts.scss" as *;
+@use "/src/styles/variables.scss" as *;
+
+.homepage {
+  background-image: url("https://picfiles.alphacoders.com/572/572348.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 87vh;
+  position: relative;
+  color: $yellow;
+}
+
+.header {
+  padding: 2rem;
+  font-size: 5rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+
+  text-align: center;
+  @include bangers-regular;
+}

@@ -1,0 +1,16 @@
+@use "/src/styles/fonts.scss" as *;
+@use "/src/styles/variables.scss" as *;
+
+.collection-form {
+  @include open-sans-uniquifier;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  textarea {
+    width: 90%;
+    min-height: 5rem;
+    resize: vertical;
+  }
+}

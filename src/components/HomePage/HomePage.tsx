@@ -1,10 +1,9 @@
-import IssuesList from "../IssuesList/IssuesList";
+import "./HomePage.scss";
 
 export default function HomePage() {
   return (
-    <>
-      <h1>My Amazing Spider-Man Collection</h1>
-      <IssuesList />
-    </>
+    <div className="homepage">
+      <h1 className="header">My Amazing Spider-Man Collection</h1>
+    </div>
   );
 }

@@ -1,10 +1,41 @@
+@use "/src/styles/fonts.scss" as *;
+@use "/src/styles/variables.scss" as *;
+
 .issue-details {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
+
+  background-color: $blue2;
+  @include open-sans-uniquifier;
+  color: $yellow;
+
+  button {
+    width: fit-content;
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.2s ease;
+    transform-origin: center;
+    will-change: transform;
+
+    &:hover {
+      transform: scale(1.06);
+    }
+  }
 }
 
 .details-image {
-  height: 90vh;
+  height: 85vh;
   width: auto;
+}
+
+.comment {
+  border: 3px solid black;
+  background-color: white;
+  color: black;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  overflow-wrap: anywhere;
 }

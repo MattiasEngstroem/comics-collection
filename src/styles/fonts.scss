@@ -1,0 +1,19 @@
+@mixin bangers-regular {
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: cursive;
+}
+
+@mixin open-sans-uniquifier {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: oblique;
+  font-variation-settings: "wdth" 100;
+}
+
+@mixin shadows-into-light-regular {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+}

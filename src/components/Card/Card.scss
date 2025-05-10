@@ -1,10 +1,20 @@
+@use "/src/styles/fonts.scss" as *;
+@use "/src/styles/variables.scss" as *;
+
 .card {
   max-width: 200px;
+
+  @include shadows-into-light-regular;
+  color: $yellow;
 }
 
 .cover-image {
   width: 100%;
   height: 310px;
+  transition: transform 0.4s;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .in-collection {

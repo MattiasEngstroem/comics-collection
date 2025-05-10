@@ -25,8 +25,8 @@ export default function Collection() {
   );
 
   return (
-    <div>
-      <h1>Number of issues in collection: {items.length}</h1>
+    <div className="collection">
+      <h2>Number of issues in collection: {items.length}</h2>
       <h2>Total number of pages in issues: {totalPages}</h2>
       <CardContainer arrayToRender={sortedIssues} />
     </div>

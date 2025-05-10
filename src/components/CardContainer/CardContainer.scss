@@ -1,3 +1,5 @@
+@use "/src/styles/variables.scss" as *;
+
 .card-container {
   display: flex;
   flex-direction: row;
@@ -5,4 +7,9 @@
   overflow-y: scroll;
   column-gap: 5px;
   row-gap: 60px;
+  background-color: $blue2;
+  color: white;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
