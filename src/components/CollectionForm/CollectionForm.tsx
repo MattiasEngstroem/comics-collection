@@ -19,6 +19,8 @@ export default function CollectionForm() {
 
   const thisItem = items.find((item) => item.id === issueId);
 
+  const grades = ["😠", "😐", "😊", "😁"];
+
   useEffect(() => {
     if (thisItem) {
       setGrade(thisItem.grade);
@@ -47,19 +49,21 @@ export default function CollectionForm() {
 
   return (
     <form className="collection-form" onSubmit={handleSubmit}>
-      <label>
-        grade:
-        <select
-          name="grade"
-          value={grade}
-          onChange={(e) => setGrade(e.target.value)}
-        >
-          <option>😠</option>
-          <option>😐</option>
-          <option>😊</option>
-          <option>😁</option>
-        </select>
-      </label>
+      <p>grade:</p>
+      <div className="radio-buttons">
+        {grades.map((g) => (
+          <label key={g}>
+            <input
+              type="radio"
+              name="grade"
+              value={g}
+              checked={grade === g}
+              onChange={(e) => setGrade(e.target.value)}
+            />
+            {g}
+          </label>
+        ))}
+      </div>
       <label>
         condition:
         <select

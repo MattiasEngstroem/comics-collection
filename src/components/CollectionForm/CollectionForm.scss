@@ -13,4 +13,10 @@
     min-height: 5rem;
     resize: vertical;
   }
+
+  .radio-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
 }
